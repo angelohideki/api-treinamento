@@ -1,5 +1,7 @@
 ﻿using ApiTreinamento.Domain;
+using ApiTreinamento.DTOs;
 using ApiTreinamento.Repository;
+using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiTreinamento.Controllers
@@ -9,25 +11,31 @@ namespace ApiTreinamento.Controllers
     public class CategoriasController : ControllerBase
     {
         private readonly IUnitOfWork _uof;
+        private readonly IMapper _mapper;
 
-        public CategoriasController(IUnitOfWork contexto)
+        public CategoriasController(IUnitOfWork contexto, IMapper mapper)
         {
             _uof = contexto;
+            _mapper = mapper;
         }
 
         [HttpGet("produtos")]
-        public ActionResult<IEnumerable<Categoria>> GetCategoriasProdutos()
+        public ActionResult<IEnumerable<CategoriaDTO>> GetCategoriasProdutos()
         {
-            return _uof.CategoriaRepository.GetCategoriasProdutos().ToList(); 
+            var categorias = _uof.CategoriaRepository.GetCategoriasProdutos().ToList();
+            return _mapper.Map<List<CategoriaDTO>>(categorias);
+   
         }
         [HttpGet]
-        public ActionResult<IEnumerable<Categoria>> Get()
+        public ActionResult<IEnumerable<CategoriaDTO>> Get()
         {     
-            return _uof.CategoriaRepository.Get().ToList();
+            var categorias = _uof.CategoriaRepository.Get().ToList();
+            return _mapper.Map<List<CategoriaDTO>>(categorias);
+            
         }
 
         [HttpGet("{id}", Name = "ObterCategoria")]
-        public ActionResult<Categoria> Get(int id)
+        public ActionResult<CategoriaDTO> Get(int id)
         {
             var categoria = _uof.CategoriaRepository.GetById(c => c.CategoriaId == id);
 
@@ -35,9 +43,9 @@ namespace ApiTreinamento.Controllers
             {
                 return NotFound("Categoria não encontrada...");
             }
+            var categoriaDTO = _mapper.Map<CategoriaDTO>(categoria);
+            return Ok(categoriaDTO);
 
-            return Ok(categoria);
-            
         }
 
         [HttpPut("{id}")]

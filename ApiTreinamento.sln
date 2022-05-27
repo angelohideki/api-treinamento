@@ -5,6 +5,10 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ApiTreinamento", "ApiTreinamento.csproj", "{10660AAF-10DA-4CEC-952A-7D8872E0B207}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Treinamento", "..\Treinamento\Treinamento.csproj", "{17875D35-98A4-4375-B8CA-C6CF4B14C448}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiMediatR", "..\ApiMediatR\ApiMediatR.csproj", "{8CB4A037-6E1E-498E-B4A4-F0B3376F00C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{10660AAF-10DA-4CEC-952A-7D8872E0B207}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10660AAF-10DA-4CEC-952A-7D8872E0B207}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10660AAF-10DA-4CEC-952A-7D8872E0B207}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17875D35-98A4-4375-B8CA-C6CF4B14C448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17875D35-98A4-4375-B8CA-C6CF4B14C448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17875D35-98A4-4375-B8CA-C6CF4B14C448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17875D35-98A4-4375-B8CA-C6CF4B14C448}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8CB4A037-6E1E-498E-B4A4-F0B3376F00C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8CB4A037-6E1E-498E-B4A4-F0B3376F00C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8CB4A037-6E1E-498E-B4A4-F0B3376F00C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8CB4A037-6E1E-498E-B4A4-F0B3376F00C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

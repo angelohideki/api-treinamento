@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.ObjectModel;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -7,6 +8,10 @@ namespace ApiTreinamento.Domain;
 [Table("Produtos")]
 public class Produto
 {
+    public Produto(){
+        Promocoes = new Collection<Promocao>();
+    }
+
     [Key]
     public int ProdutoId { get; set; }
 
@@ -32,6 +37,6 @@ public class Produto
     public int CategoriaId { get; set; }
 
     [JsonIgnore]
-    public Categoria? Categoria { get; set; }    
-
+    public Categoria? Categoria { get; set; }
+    public ICollection<Promocao> Promocoes { get; set; }
 }
